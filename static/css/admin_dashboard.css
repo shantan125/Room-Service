@@ -1,0 +1,62 @@
+/* Global styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Navigation section styles */
+.nav-sec {
+    background-color: #41C9E2;
+    color: white;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-sec h3 {
+    margin: 0;
+}
+
+.nav-sec nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 1rem;
+}
+
+.nav-sec nav a:hover {
+    text-decoration: underline;
+}
+
+/* Dashboard heading styles */
+.dashboard-heading {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+/* Request table styles */
+.request-table {
+    width: 80%;
+    margin: 2rem auto;
+    border-collapse: collapse;
+}
+
+.request-table th, .request-table td {
+    border: 1px solid #ccc;
+    padding: 0.5rem;
+    text-align: left;
+}
+
+.request-table th {
+    background-color: #41C9E2;
+    color: white;
+}
+
+.request-table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.request-table tr:hover {
+    background-color: #ddd;
+}

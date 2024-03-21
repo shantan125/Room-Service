@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Room Service Request</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/room_service.css') }}">
+</head>
+
+<body>
+    <div class="nav-sec">
+        <h3>Room Service</h3>
+        <nav>
+            <a href="{{ url_for('logout') }}">Logout</a>
+            <a href="{{ url_for('admin_login') }}">Admin-Login</a>
+            <a href="{{ url_for('user_dashboard') }}">Dashboard</a>
+        </nav>
+    </div>
+    <h1>Room Service Request</h1>
+    <div class="form-sec">
+        <form action="/room_service" method="post">
+            <label for="hotel_name">Hotel/Hostel Name:</label>
+            <select id="hotel_name" name="hotel_name" required>
+                <option value="">Select a hotel/hostel</option>
+                <option value="Hostel 1">Hostel 1</option>
+                <option value="Hostel 2">Hostel 2</option>
+                <option value="Hostel 3">Hostel 3</option>
+            </select><br>
+            <label for="room_number">Room Number:</label>
+            <input type="text" id="room_number" name="room_number" required><br>
+            <label for="student_id">Student ID:</label>
+            <input type="text" id="student_id" name="student_id" required><br>
+            <label for="email">Email ID:</label>
+            <input type="email" id="email" name="email" required><br>
+            <label for="service_type">Service Type:</label>
+            <select id="service_type" name="service_type" required>
+                <option value="">Select a service type</option>
+                <option value="Room Cleaning">Room Cleaning</option>
+                <option value="Laundry Service">Laundry Service</option>
+                <option value="Maintenance">Maintenance</option>
+            </select><br>
+            <label for="timing">Timing:</label>
+            <select id="timing" name="timing" required>
+                <option value="">Select a timing</option>
+                <option value="8:00AM to 9:00AM">8:00AM to 9:00AM</option>
+                <option value="12:00PM to 1:00PM">12:00PM to 1:00PM</option>
+                <option value="4:15PM to 5:15PM">4:15PM to 5:15PM</option>
+            </select><br>
+            <label for="date">Date:</label>
+            <input type="date" id="date" name="date" required><br>
+            <button type="submit">Submit Request</button>
+        </form>
+    </div>
+</body>
+
+</html>

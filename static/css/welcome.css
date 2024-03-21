@@ -1,0 +1,76 @@
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-image: radial-gradient(circle at 13% 47%, rgba(140, 140, 140,0.03) 0%, rgba(140, 140, 140,0.03) 25%,transparent 25%, transparent 100%),
+                      radial-gradient(circle at 28% 63%, rgba(143, 143, 143,0.03) 0%, rgba(143, 143, 143,0.03) 16%,transparent 16%, transparent 100%),
+                      radial-gradient(circle at 81% 56%, rgba(65, 65, 65,0.03) 0%, rgba(65, 65, 65,0.03) 12%,transparent 12%, transparent 100%),
+                      radial-gradient(circle at 26% 48%, rgba(60, 60, 60,0.03) 0%, rgba(60, 60, 60,0.03) 6%,transparent 6%, transparent 100%),
+                      radial-gradient(circle at 97% 17%, rgba(150, 150, 150,0.03) 0%, rgba(150, 150, 150,0.03) 56%,transparent 56%, transparent 100%),
+                      radial-gradient(circle at 50% 100%, rgba(25, 25, 25,0.03) 0%, rgba(25, 25, 25,0.03) 36%,transparent 36%, transparent 100%),
+                      radial-gradient(circle at 55% 52%, rgba(69, 69, 69,0.03) 0%, rgba(69, 69, 69,0.03) 6%,transparent 6%, transparent 100%),
+                      linear-gradient(90deg, rgb(255,255,255),rgb(255,255,255));
+}
+
+.nav-sec {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    background-color: rgba(152, 171, 238, 0.7);
+    padding: 15px 30px;
+    margin: 0px;
+    height: 30px;
+}
+
+.nav-heading {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.nav-link a {
+    text-decoration: none;
+    font-size: 18px;
+    color: black;
+    transition: 0.3s;
+    margin-left: 15px;
+    font-weight: 900;
+}
+
+.nav-link a:hover {
+    text-decoration: underline;
+    font-weight: 900;
+    color: rgb(255, 255, 255);
+}
+
+.hero-sec {
+    background-color: rgba(32, 22, 88, 0.4);
+    text-align: center;
+    padding: 50px 0;
+}
+.hero-sec a{
+    background-color:#201658 ;
+    color: antiquewhite;
+    padding: 16px 32px;
+    border-radius: 25px;
+    font-size: medium;
+    font-weight: 900;
+    text-decoration: none;
+}
+.hero-sec a:hover{
+    background-color:#332b61;
+}
+.srv-sec{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin: 60px;
+    background-color: rgba(65, 201, 226,0.6);
+}
+.serv{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 400px;
+}

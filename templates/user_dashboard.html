@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/userdb.css') }}">
+</head>
+
+<body>
+    <div class="nav-sec">
+        <h3>Room Service</h3>
+        <nav>
+            <a href="{{ url_for('logout') }}">Logout</a>
+            <a href="{{ url_for('admin_login') }}">Admin-login</a>
+        </nav>
+    </div>
+    <h1 class="dashboard-heading">User Dashboard</h1>
+    <div class="user-details">
+            <h2 class="user-info-heading">User Information</h2>
+            <p><strong>First Name:</strong> {{ user_info[0] }}</p>
+            <p><strong>Last Name:</strong> {{ user_info[1] }}</p>
+            <p><strong>Student ID:</strong> {{ user_info[2] }}</p>
+            <p><strong>Email:</strong> {{ user_info[3] }}</p>
+    </div>
+<h2 class="requests-heading">Room Service Requests</h2>
+    <table class="requests-table">
+        <thead>
+            <tr>
+                <th>Hotel/Hostel Name</th>
+                <th>Room Number</th>
+                <th>Service Type</th>
+                <th>Timing</th>
+                <th>Date</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for request in user_requests %}
+            <tr>
+                <td>{{ request[2] }}</td>
+                <td>{{ request[3] }}</td>
+                <td>{{ request[6] }}</td>
+                <td>{{ request[7] }}</td>
+                <td>{{ request[8] }}</td>
+                <td>{% if request[9] == 1 %}Accepted{% else %}Pending{% endif %}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <p><a href="{{ url_for('room_service') }}">Book Room Service</a></p>
+</body>
+
+</html>

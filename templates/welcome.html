@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/welcome.css') }}">
+</head>
+
+<body>
+    <div class="nav-sec">
+        <div class="nav-heading">
+            <h2>Room Service</h2>
+        </div>
+        <div class="nav-link">
+            <a href="#about">About</a>
+            <a href="{{ url_for('user_dashboard') }}">Dashboard</a>
+            <a href="{{ url_for('login') }}">Login</a>
+            <a href="{{ url_for('signup') }}">Signup</a>
+        </div>
+    </div>
+    <div class="hero-sec">
+        <h1>Welcome {{ user.first_name }} {{ user.last_name }}</h1>
+        <a href="{{ url_for('room_service') }}">Book Now</a>
+    </div>
+
+    <div class="srv-sec">
+        <!--service 1 -->
+        <div class="services-section">
+            <div class="serv">
+                <div class="serv-icon">
+                    <img src="{{ url_for('static', filename='images/cleaning-service.png') }}" alt="Cleaning Service"
+                        height="150px" width="150px">
+                </div>
+                <div class="srv-cnt">
+                    <h3>Room cleaning</h3>
+                    <p>Convenient room cleaning service for student hostels, ensuring tidy and hygienic living spaces
+                        for
+                        residents' comfort and well-being</p>
+                </div>
+            </div>
+        </div>
+        <!--service 2-->
+        <div class="services-section">
+            <div class="serv">
+                <div class="serv-icon">
+                    <img src="{{ url_for('static', filename='images/laundry-service.png') }}" alt="Cleaning Service"
+                        height="150px" width="150px">
+                </div>
+                <div class="srv-cnt">
+                    <h3>Laundry Service</h3>
+                    <p>Effortless laundry service for student hostels, providing clean and fresh clothes for residents'
+                        convenience and comfort.</p>
+                </div>
+            </div>
+        </div>
+        <!--service 3-->
+        <div class="services-section">
+            <div class="serv">
+                <div class="serv-icon">
+                    <img src="{{ url_for('static', filename='images/maintenance.png') }}" alt="Cleaning Service"
+                        height="150px" width="150px">
+                </div>
+                <div class="srv-cnt">
+                    <h3>Maintenance Service</h3>
+                    <p>Comprehensive maintenance service for student hostels, offering expert electrician and plumbing
+                        works for residents' convenience and safety.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

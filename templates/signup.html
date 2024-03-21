@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/signup.css') }}">
+</head>
+
+<body>
+    <div class="nav-sec">
+        <h3>Room Service</h3>
+        <nav>
+            <a href="{{ url_for('login') }}">LOGIN</a>
+            <a href="{{ url_for('admin_login') }}">ADMIN</a>
+        </nav>
+    </div>
+    
+    <!-- Display flash messages if any -->
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    <ul>
+        {% for message in messages %}
+        <li>{{ message }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+    {% endwith %}
+    <div class="signup-form">
+        <h1>Signup</h1>
+        <form action="/signup" method="post">
+            <label for="first_name">First Name:</label>
+            <input type="text" id="first_name" name="first_name" required><br>
+            <label for="last_name">Last Name:</label>
+            <input type="text" id="last_name" name="last_name" required><br>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required><br>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required><br>
+            <button type="submit">Signup</button>
+        </form>
+    </div>
+  
+    <!-- Display error message if any -->
+    <p>{{ error }}</p>
+    <p>Already have an account? <a href="{{ url_for('login') }}">Login</a></p>
+    <!-- Additional link for admin login -->
+    <p>If you are an admin, <a href="{{ url_for('admin_login') }}">click here</a> to login.</p>
+</body>
+
+</html>

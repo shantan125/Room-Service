@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/admin_dashboard.css') }}">
+</head>
+
+<body>
+    <div class="nav-sec">
+        <h3>Room Service</h3>
+        <nav>
+            <a href="{{ url_for('logout') }}">Logout</a>
+            <a href="{{ url_for('login') }}">User Login</a>
+        </nav>
+    </div>
+    <h1 class="dashboard-heading">Admin Dashboard</h1>
+    <table class="request-table">
+        <thead>
+            <tr>
+                <th>Request ID</th>
+                <th>User Email</th>
+                <th>Hotel/Hostel Name</th>
+                <th>Room Number</th>
+                <th>Service Type</th>
+                <th>Timing</th>
+                <th>Date</th>
+                <th>Status</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for request in requests %}
+            <tr>
+                <td>{{ request[0] }}</td>
+                <td>{{ request[5] }}</td>
+                <td>{{ request[2] }}</td>
+                <td>{{ request[3] }}</td>
+                <td>{{ request[6] }}</td>
+                <td>{{ request[7] }}</td>
+                <td>{{ request[8] }}</td>
+                <td>{% if request[9] == 1 %}Accepted{% else %}Pending{% endif %}</td>
+                <td><a href="{{ url_for('accept_request', request_id=request[0]) }}">Accept</a></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+
+</html>
